@@ -3,12 +3,22 @@ from hw_2.models import Product
 
 
 class Command(BaseCommand):
-    help = "Print name, description, price and count"
+    help = "create product"
 
-    def handle(self, *args, **options):
-        product = Product(name='TV',
-                      description='Плазменный телевизор с очень хорошей качественной картинкой',
-                      price=39999.99,
-                      count='5')
+    def add_arguments(self, parser):
+
+        parser.add_argument('name', type=str, help='name of products')
+        parser.add_argument("description", type=str, help="product description")
+        parser.add_argument("cost", type=float, help="price of product")
+        parser.add_argument("quantity", type=int, help="quantity of product")
+
+    def handle(self, *args, **kwargs):
+        name = kwargs.get('name')
+        description = kwargs.get('description')
+        price = kwargs.get('cost')
+        count = kwargs.get('quantity')
+
+        product = Product(name=name, description=description, price=price,  count=count)
         product.save()
+
         self.stdout.write(f'{product}')

@@ -3,12 +3,24 @@ from hw_2.models import Client
 
 
 class Command(BaseCommand):
-    help = "Print name, email, phone_number and address"
+    help = "create client "
 
-    def handle(self, *args, **options):
-        user = Client(name='Jhon',
-                      email='JhonSmith@gmail.com',
-                      phone_number='+79785222222',
-                      address='New York, 6-th ave, 231')
-        user.save()
-        self.stdout.write(f'{user}')
+    def add_arguments(self, parser):
+
+        parser.add_argument('name', type=str, help='client name')
+        parser.add_argument("email", type=str, help="client email")
+        parser.add_argument("phone", type=str, help="client phone_number")
+        parser.add_argument("address", type=str, help="client adress")
+
+
+    def handle(self, *args, **kwargs):
+        name = kwargs.get('name')
+        email = kwargs.get('email')
+        phone = kwargs.get('phone')
+        address = kwargs.get('address')
+
+        client = Client(name=name, email=email, phone=phone,  address=address)
+        client.save()
+
+        self.stdout.write(f'{client}')
+
