@@ -35,3 +35,377 @@
 [INFO    :             django.server] - 2024-01-15 13:06:45,677 : log_message @ 0212: "GET / HTTP/1.1" 200 904
 [INFO    :             django.server] - 2024-01-15 13:06:46,303 : log_message @ 0212: "GET /about/ HTTP/1.1" 200 857
 [INFO    :             django.server] - 2024-01-15 13:06:47,904 : log_message @ 0212: "GET / HTTP/1.1" 200 904
+[INFO    :   django.utils.autoreload] - 2024-02-06 11:46:40,458 : run_with_reloader @ 0668: Watching for file changes with StatReloader
+[INFO    :   django.utils.autoreload] - 2024-02-06 11:48:31,693 : trigger_reload @ 0266: /Users/Nikita/Desktop/Nikita/django_homeworks/django_homeworks/settings.py changed, reloading.
+[INFO    :   django.utils.autoreload] - 2024-02-06 11:48:33,266 : run_with_reloader @ 0668: Watching for file changes with StatReloader
+[INFO    :   django.utils.autoreload] - 2024-02-06 11:48:42,838 : run_with_reloader @ 0668: Watching for file changes with StatReloader
+[INFO    :   django.utils.autoreload] - 2024-02-06 11:50:18,239 : run_with_reloader @ 0668: Watching for file changes with StatReloader
+[INFO    :             django.server] - 2024-02-06 11:50:22,153 : log_message @ 0212: "GET / HTTP/1.1" 200 13020
+[WARNING :            django.request] - 2024-02-06 11:50:22,501 : log_response @ 0241: Not Found: /media/items/djessplus_OnWoFdP.jpeg
+[WARNING :            django.request] - 2024-02-06 11:50:22,501 : log_response @ 0241: Not Found: /media/items/blagomax_BkYJTyY.jpeg
+[WARNING :             django.server] - 2024-02-06 11:50:22,520 : log_message @ 0212: "GET /media/items/djessplus_OnWoFdP.jpeg HTTP/1.1" 404 14061
+[WARNING :             django.server] - 2024-02-06 11:50:22,524 : log_message @ 0212: "GET /media/items/blagomax_BkYJTyY.jpeg HTTP/1.1" 404 14057
+[WARNING :            django.request] - 2024-02-06 11:50:22,588 : log_response @ 0241: Not Found: /media/items/lutein_int_2abBqud.jpeg
+[WARNING :             django.server] - 2024-02-06 11:50:22,598 : log_message @ 0212: "GET /media/items/lutein_int_2abBqud.jpeg HTTP/1.1" 404 14065
+[INFO    :             django.server] - 2024-02-06 11:50:22,946 : log_message @ 0212: "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 200 12621
+[INFO    :             django.server] - 2024-02-06 11:50:22,947 : log_message @ 0212: "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 200 13578
+[INFO    :             django.server] - 2024-02-06 11:50:22,950 : log_message @ 0212: "GET /static/debug_toolbar/css/print.css HTTP/1.1" 200 43
+[INFO    :             django.server] - 2024-02-06 11:50:23,056 : log_message @ 0212: "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 200 4527
+[WARNING :            django.request] - 2024-02-06 11:50:24,664 : log_response @ 0241: Not Found: /apple-touch-icon-precomposed.png
+[WARNING :             django.server] - 2024-02-06 11:50:24,664 : log_message @ 0212: "GET /apple-touch-icon-precomposed.png HTTP/1.1" 404 14051
+[WARNING :            django.request] - 2024-02-06 11:50:24,704 : log_response @ 0241: Not Found: /apple-touch-icon.png
+[WARNING :             django.server] - 2024-02-06 11:50:24,711 : log_message @ 0212: "GET /apple-touch-icon.png HTTP/1.1" 404 14003
+[WARNING :            django.request] - 2024-02-06 11:50:24,760 : log_response @ 0241: Not Found: /favicon.ico
+[WARNING :             django.server] - 2024-02-06 11:50:24,761 : log_message @ 0212: "GET /favicon.ico HTTP/1.1" 404 13967
+[INFO    :             django.server] - 2024-02-06 11:52:26,894 : log_message @ 0212: "GET /shop/clients HTTP/1.1" 301 0
+[ERROR   :            django.request] - 2024-02-06 11:52:27,088 : log_response @ 0241: Internal Server Error: /shop/clients/
+Traceback (most recent call last):
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shop_app_client
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/shop_app/views.py", line 29, in clients
+    return render(request, 'shop_app/clients.html', {'clients': clients})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 197, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shop_app_client
+[ERROR   :             django.server] - 2024-02-06 11:52:27,173 : log_message @ 0212: "GET /shop/clients/ HTTP/1.1" 500 213010
+[INFO    :             django.server] - 2024-02-06 11:52:27,221 : log_message @ 0212: "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:52:27,226 : log_message @ 0212: "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:52:27,227 : log_message @ 0212: "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:52:27,340 : log_message @ 0212: "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:52:36,711 : log_message @ 0212: "GET /shop/products HTTP/1.1" 301 0
+[ERROR   :            django.request] - 2024-02-06 11:52:36,805 : log_response @ 0241: Internal Server Error: /shop/products/
+Traceback (most recent call last):
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shop_app_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/shop_app/views.py", line 21, in products
+    return render(request, 'shop_app/products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 197, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shop_app_product
+[ERROR   :             django.server] - 2024-02-06 11:52:36,872 : log_message @ 0212: "GET /shop/products/ HTTP/1.1" 500 215653
+[INFO    :             django.server] - 2024-02-06 11:52:45,974 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=HistoryPanel HTTP/1.1" 200 17905
+[INFO    :             django.server] - 2024-02-06 11:52:45,981 : log_message @ 0212: "GET /static/debug_toolbar/js/history.js HTTP/1.1" 200 3515
+[INFO    :             django.server] - 2024-02-06 11:52:48,100 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=VersionsPanel HTTP/1.1" 200 621
+[INFO    :             django.server] - 2024-02-06 11:52:49,118 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=TimerPanel HTTP/1.1" 200 1379
+[INFO    :             django.server] - 2024-02-06 11:52:49,130 : log_message @ 0212: "GET /static/debug_toolbar/js/timer.js HTTP/1.1" 200 3686
+[INFO    :             django.server] - 2024-02-06 11:52:50,328 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=SettingsPanel HTTP/1.1" 200 26618
+[INFO    :             django.server] - 2024-02-06 11:52:54,186 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=HeadersPanel HTTP/1.1" 200 3699
+[INFO    :             django.server] - 2024-02-06 11:52:55,258 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=RequestPanel HTTP/1.1" 200 939
+[INFO    :             django.server] - 2024-02-06 11:52:55,891 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=SQLPanel HTTP/1.1" 200 115
+[INFO    :             django.server] - 2024-02-06 11:52:56,642 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=StaticFilesPanel HTTP/1.1" 200 33286
+[INFO    :             django.server] - 2024-02-06 11:52:57,404 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=TemplatesPanel HTTP/1.1" 200 5885
+[INFO    :             django.server] - 2024-02-06 11:53:02,203 : log_message @ 0212: "GET /__debug__/render_panel/?store_id=5cb185395444414b9885be38eb62ae3e&panel_id=CachePanel HTTP/1.1" 200 1413
+[WARNING :            django.request] - 2024-02-06 11:53:11,432 : log_response @ 0241: Not Found: /about_me
+[WARNING :             django.server] - 2024-02-06 11:53:11,432 : log_message @ 0212: "GET /about_me HTTP/1.1" 404 13955
+[ERROR   :            django.request] - 2024-02-06 11:54:48,410 : log_response @ 0241: Internal Server Error: /shop/products/
+Traceback (most recent call last):
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: shop_app_product
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/shop_app/views.py", line 21, in products
+    return render(request, 'shop_app/products.html', {'products': products})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/test/utils.py", line 111, in instrumented_test_render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/template/defaulttags.py", line 197, in render
+    len_values = len(values)
+                 ^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 1926, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 235, in execute
+    return self._record(super().execute, sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/debug_toolbar/panels/sql/tracking.py", line 160, in _record
+    return method(sql, params)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Nikita/Desktop/Nikita/django_homeworks/venv/lib/python3.12/site-packages/django/db/backends/sqlite3/base.py", line 328, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: shop_app_product
+[ERROR   :             django.server] - 2024-02-06 11:54:48,495 : log_message @ 0212: "GET /shop/products/ HTTP/1.1" 500 215652
+[INFO    :             django.server] - 2024-02-06 11:54:48,539 : log_message @ 0212: "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:54:48,546 : log_message @ 0212: "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:54:48,548 : log_message @ 0212: "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:54:48,617 : log_message @ 0212: "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:56:44,512 : log_message @ 0212: "GET / HTTP/1.1" 200 12927
+[INFO    :             django.server] - 2024-02-06 11:56:44,538 : log_message @ 0212: "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:56:44,542 : log_message @ 0212: "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:56:44,547 : log_message @ 0212: "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:56:44,552 : log_message @ 0212: "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+[INFO    :   django.utils.autoreload] - 2024-02-06 11:59:36,399 : run_with_reloader @ 0668: Watching for file changes with StatReloader
+[INFO    :             django.server] - 2024-02-06 11:59:40,695 : log_message @ 0212: "GET / HTTP/1.1" 200 12928
+[INFO    :             django.server] - 2024-02-06 11:59:40,718 : log_message @ 0212: "GET /static/debug_toolbar/css/print.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:59:40,723 : log_message @ 0212: "GET /static/debug_toolbar/css/toolbar.css HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:59:40,727 : log_message @ 0212: "GET /static/debug_toolbar/js/toolbar.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:59:40,741 : log_message @ 0212: "GET /static/debug_toolbar/js/utils.js HTTP/1.1" 304 0
+[INFO    :             django.server] - 2024-02-06 11:59:43,562 : log_message @ 0212: "GET /shop/products/ HTTP/1.1" 200 12880
+[INFO    :             django.server] - 2024-02-06 11:59:47,642 : log_message @ 0212: "GET /shop/orders HTTP/1.1" 301 0
+[INFO    :             django.server] - 2024-02-06 11:59:47,675 : log_message @ 0212: "GET /shop/orders/ HTTP/1.1" 200 12880
+[WARNING :            django.request] - 2024-02-06 11:59:48,836 : log_response @ 0241: Not Found: /about_me
+[WARNING :             django.server] - 2024-02-06 11:59:48,836 : log_message @ 0212: "GET /about_me HTTP/1.1" 404 13955
